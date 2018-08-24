@@ -50,7 +50,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/status', function(req, res) {
- res.send(200, {  "status": "ok",  "Pod_IP": "HOSTNAME",  "Pod_IP2222": "$HOSTNAME",  "Pod_name22222": "PODname", "Pod_name": "${PodName}"});
+ res.send('Welcome to OpenShift!! My HostName is: ' + os.hostname() + '\n');
 }); 
 
 //All Records
