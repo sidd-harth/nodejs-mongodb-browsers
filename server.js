@@ -38,10 +38,16 @@ app.get('/', function(req, res) {
  res.jsonp(200, {
   "status": "ok",
   "Pod_IP": "HOSTNAME",
-  "Pod_IP2": "$podIP",
-  "Pod_IP2": "podIP"
+  "Pod_IP2222": $HOSTNAME,
+  "Pod_name22222": "$PODname",
+ "Pod_name": "${PodName}"
+
 });
 });
+
+app.get('/status', function(req, res) {
+ res.send(200, {  "status": "ok",  "Pod_IP": "HOSTNAME",  "Pod_IP2222": "$HOSTNAME",  "Pod_name22222": "PODname", "Pod_name": "${PodName}"});
+}); 
 
 //All Records
 app.get('/get', function(req, res) {
@@ -134,6 +140,6 @@ app.get('/specific/:user_id', function(req,res){
 
 
 
-app.listen(8080, function() {
+app.listen(9856, function() {
  console.log('Node HTTP server is listening');
 });
