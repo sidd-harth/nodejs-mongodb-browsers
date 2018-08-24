@@ -1,0 +1,11 @@
+{
+    "name": "mongoDB_Nodejs",
+    "version": "0.0.1",
+    "description": "description",
+    "main": "server.js",
+    "dependencies": {
+        "mongoose": "5.2.9",
+        "express": "*",
+        "body-parser": "*"
+    }
+}
