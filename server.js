@@ -37,6 +37,7 @@ var browserModel = mongoose.model('browser', dataSchema);
 app.get('/', function(req, res) {
  res.jsonp(200, {
   'status': "ok",
+  "Pod_IP":".$_SERVER['SERVER_ADDR']"
  });
 });
 
@@ -131,6 +132,6 @@ app.get('/specific/:user_id', function(req,res){
 
 
 
-app.listen(9000, function() {
+app.listen(8080, function() {
  console.log('Node HTTP server is listening');
 });
