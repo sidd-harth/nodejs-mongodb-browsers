@@ -1,6 +1,8 @@
 var express = require('express');
 var mongoose = require('mongoose');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var os = require('os');
+
 //var config = require('./config');
 
 var app = express();
@@ -36,21 +38,14 @@ var browserModel = mongoose.model('browser', dataSchema);
 
 /**** API Calls Begin Here ****/
 app.get('/', function(req, res) {
-	//var ${HOSTNAME};
-	//var hostname = ${HOSTNAME};
-	//var hostname = ${HOSTNAME};
+	
  res.jsonp(200, {
-  "status": 'ok',
- // "Pod_IP": config.host,
-  "Pod_IP2222": hostname,
-  "Pod_name22222": "$PODname",
- "Pod_name": "${PodName}"
-
+  "status": 'ok'
 });
 });
 
-app.get('/status', function(req, res) {
- res.send('Welcome to OpenShift!! My HostName is: ' + os.hostname() + '\n');
+app.get('/hostname', function(req, res) {
+ res.send('Browser Service deployed in Openshift!! My HostName is: ' + os.hostname() + '\n');
 }); 
 
 //All Records
