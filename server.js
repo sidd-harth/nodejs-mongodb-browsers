@@ -36,9 +36,11 @@ var browserModel = mongoose.model('browser', dataSchema);
 /**** API Calls Begin Here ****/
 app.get('/', function(req, res) {
  res.jsonp(200, {
-  'status': "ok",
-  "Pod_IP":".$_SERVER['SERVER_ADDR']"
- });
+  "status": "ok",
+  "Pod_IP": "HOSTNAME",
+  "Pod_IP2": "$podIP",
+  "Pod_IP2": "podIP"
+});
 });
 
 //All Records
