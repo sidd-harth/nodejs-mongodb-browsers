@@ -1,6 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser')
+//var config = require('./config');
 
 var app = express();
 app.use(bodyParser.json());
@@ -35,10 +36,13 @@ var browserModel = mongoose.model('browser', dataSchema);
 
 /**** API Calls Begin Here ****/
 app.get('/', function(req, res) {
+	//var ${HOSTNAME};
+	//var hostname = ${HOSTNAME};
+	//var hostname = ${HOSTNAME};
  res.jsonp(200, {
-  "status": "ok",
-  "Pod_IP": "HOSTNAME",
-  "Pod_IP2222": $HOSTNAME,
+  "status": 'ok',
+ // "Pod_IP": config.host,
+  "Pod_IP2222": hostname,
   "Pod_name22222": "$PODname",
  "Pod_name": "${PodName}"
 
@@ -138,7 +142,8 @@ app.get('/specific/:user_id', function(req,res){
 })
 
 
-
+console.log('environment_port: ' + process.env.OPENSHIFT_NODEJS_PORT);
+console.log('environment_ip: ' + process.env.OPENSHIFT_NODEJS_IP);
 
 app.listen(8080, function() {
  console.log('Node HTTP server is listening');
